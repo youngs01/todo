@@ -1,0 +1,122 @@
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 14%, rgba(0, 187, 229, 1) 74%, rgba(0, 187, 229, 1) 100%);
+    width: 100vw;
+    height: 100vh;
+}
+
+.task-element {
+    background-color: rgba(128, 128, 128, 0.233);
+    cursor: text;
+    z-index: 2;
+}
+
+.task-element button {
+    background-color: #FE584A;
+    font-size: 15px;
+    z-index: 3;
+}
+
+input {
+    outline: none;
+}
+
+/* .list-element {
+    background-color: rgba(128, 128, 128, 0.144);
+} */
+
+
+ul li::before {
+    content: '';
+    display: inline-block;
+    align-self: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    border: 1px solid black;
+
+}
+
+ul li.checked::before {
+    background-color: blue;
+    border: none;
+}
+
+ul li.checked {
+    text-decoration: line-through;
+}
+
+ul li {
+    background-color: rgba(128, 128, 128, 0.144);
+    list-style: none;
+    padding: 10px 20px 10px 39px;
+    border-radius: 100px;
+    font-size: 17px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul li div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.heading h1 {
+    font-size: 50px;
+    color: white;
+    font-weight: 700;
+}
+
+.edittask-parent {
+    width: 100%;
+    overflow: hidden;
+    transition: all ease 1s;
+    padding: 10px 10px;
+
+    height: 60px !important;
+}
+
+.edittask-parent input {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    color: white;
+}
+
+.edittask-parent input::placeholder {
+    color: rgba(255, 255, 255, 0.815);
+}
+
+.edittask-parent button {
+    background-color: blue;
+    color: white;
+    border: 0;
+    border-radius: 20px;
+
+}
+
+    {}
+
+@media screen and (max-width:990px) {
+    .row {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width:590px) {
+    .task-element button {
+        font-size: 10px;
+    }
+
+    .heading h1 {
+        font-size: 40px;
+    }
+}
