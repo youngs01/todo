@@ -1,49 +1,127 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    background: #333333;
-    background: -webkit-linear-gradient(to right, #dd1818, #333333);
-    background: linear-gradient(to right, #dd1818, #333333);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 14%, rgba(0, 187, 229, 1) 74%, rgba(0, 187, 229, 1) 100%);
     width: 100vw;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 30px;
 }
 
-.game-div {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 15px;
+.task-element {
+    background-color: rgba(128, 128, 128, 0.233);
+    cursor: text;
+    z-index: 2;
 }
 
-.box {
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    max-width: 120px;
-    max-height: 120px;
-    min-width: 100px;
-    min-height: 100px;
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
+.task-element button {
+    background-color: #FE584A;
+    font-size: 15px;
+    z-index: 3;
+}
+
+input {
+    outline: none;
+}
+
+/* .list-element {
+    background-color: rgba(128, 128, 128, 0.144);
+} */
+
+
+ul li::before {
+    content: '';
+    display: inline-block;
+    align-self: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    border: 1px solid black;
+
+}
+
+ul li.checked::before {
+    background-color: orange;
+    border: none;
+}
+
+ul li.checked {
+    text-decoration: line-through;
+}
+
+ul li {
+    background-color: rgba(128, 128, 128, 0.144);
+    list-style: none;
+    padding: 10px 20px 10px 39px;
+    border-radius: 100px;
+    font-size: 17px;
     font-weight: 600;
-    align-items: center;
-    font-size: 40px;
+    position: relative;
     cursor: pointer;
-    user-select: none;
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-h1 {
+ul li div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+ul li div .fa-xmark{
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.heading h1 {
     font-size: 50px;
+    color: white;
     font-weight: 700;
-    letter-spacing: 6px;
+}
+
+.edit-parent{
+    background-color: rgb(42, 42, 255);
+    padding: 10px  20px;
+    width: 450px;
+    border-radius: 100px;
+}
+
+.edit-parent input{
+    width: 100%;
+    max-width: 300px;
+    color: white;
+}
+
+.edit-parent input::placeholder{
+    color: white;
+}
+
+.transition{
+    transition: all ease 0.6s;
+}
+
+.edit-parent button:hover{
+    background-color: rgb(21, 21, 209);
+    color: white;
+}
+
+@media screen and (max-width:990px) {
+    .row {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width:590px) {
+    .task-element button {
+        font-size: 10px;
+    }
+
+    .heading h1 {
+        font-size: 40px;
+    }
 }
